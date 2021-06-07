@@ -1,0 +1,26 @@
+[
+  {
+    "img": "../assets/images/trips1.jpg",
+    "alt": "A Garden",
+    "name": "A Garden",
+    "button": "View Destination"
+  },
+  {
+    "img": "../assets/images/trips2.jpg",
+    "alt": "A Field",
+    "name": "A Field",
+    "button": "View Destination"
+  },
+  {
+    "img": "../assets/images/trips3.jpg",
+    "alt": "A Trail",
+    "name": "A Trail",
+    "button": "View Destination"
+  },
+  {
+    "img": "../assets/images/trips4.jpg",
+    "alt": "A Tree",
+    "name": "A Tree",
+    "button": "View Destination"
+  }
+]
