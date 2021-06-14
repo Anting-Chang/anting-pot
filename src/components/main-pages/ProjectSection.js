@@ -5,6 +5,11 @@ import { StaticImage } from "gatsby-plugin-image"
 import { LinedButton } from "../LinedButton"
 
 const ProjectSection = () => {
+  const color = {
+    vue: "#387D70",
+    react: "#127B98",
+    angular: "#B31416"
+  }
 
   return (
     <ProjectsContainer >
@@ -15,13 +20,48 @@ const ProjectSection = () => {
               placeholder="blurred"
               CONSTRAINED
               aspectRatio={18/9}
+              src="../../assets/images/bimrunapp1.png" />
+          </StaticImageWrapper>
+        </ImageWrapper>
+        <ProjectDetail data-sal="slide-left" data-sal-easing="ease">
+          <ProjectTitleWrapper>
+            <ProjectTitle>
+              Week Journal
+            </ProjectTitle>
+            <ProjectTag css={`background-color: ${color.react}`}>
+              <ProjectTagTitle>
+                React
+              </ProjectTagTitle>
+            </ProjectTag>
+          </ProjectTitleWrapper>
+          <ProjectDesc>
+            It's my personal project that encourage myself to live my life at its fullness.
+            It shows whole life in week in one page.
+            Each week shown as a cube and while click on it a weekly journal can be added to record my week.
+          </ProjectDesc>
+        </ProjectDetail>
+      </ProjectWrapper>
+      <ProjectWrapper>
+        <ImageWrapper>
+          <StaticImageWrapper>
+            <StaticImage
+              placeholder="blurred"
+              CONSTRAINED
+              aspectRatio={18/9}
               src="../../assets/images/tydt1.png" />
           </StaticImageWrapper>
         </ImageWrapper>
         <ProjectDetail data-sal="slide-left" data-sal-easing="ease">
-          <ProjectTitle>
-            Taiyuan Metro
-          </ProjectTitle>
+          <ProjectTitleWrapper>
+            <ProjectTitle>
+              Taiyuan Metro
+            </ProjectTitle>
+            <ProjectTag css={`background-color: ${color.vue}`}>
+              <ProjectTagTitle>
+                VUEJS
+              </ProjectTagTitle>
+            </ProjectTag>
+          </ProjectTitleWrapper>
           <ProjectDesc>
             This is a Vue2 website for viewing real time data and maintenance on metro system.
             I have worked on this site in the later half of the year.
@@ -31,12 +71,27 @@ const ProjectSection = () => {
           </ProjectDesc>
         </ProjectDetail>
       </ProjectWrapper>
-      <ProjectWrapper2>
-
-        <ProjectDetail data-sal="slide-right" data-sal-easing="ease">
-          <ProjectTitle>
-            BIMRUN
-          </ProjectTitle>
+      <ProjectWrapper>
+        <ImageWrapper>
+          <StaticImageWrapper>
+            <StaticImage
+              placeholder="blurred"
+              CONSTRAINED
+              aspectRatio={18/9}
+              src="../../assets/images/bimrun1.png" />
+          </StaticImageWrapper>
+        </ImageWrapper>
+        <ProjectDetail data-sal="slide-left" data-sal-easing="ease">
+          <ProjectTitleWrapper>
+            <ProjectTitle>
+              BIMRUN
+            </ProjectTitle>
+            <ProjectTag css={`background-color: ${color.vue}`}>
+              <ProjectTagTitle>
+                ANGULAR 5
+              </ProjectTagTitle>
+            </ProjectTag>
+          </ProjectTitleWrapper>
           <ProjectDesc>
             This is a Angular 5+ Saas website for BIM.
             I have worked on this site since I start working for my previous employer.
@@ -47,16 +102,7 @@ const ProjectSection = () => {
             <LinedButton to={"/"}>View Site</LinedButton>
           </BtnWrapper>
         </ProjectDetail>
-        <ImageWrapper>
-          <StaticImageWrapper>
-            <StaticImage
-              placeholder="blurred"
-              CONSTRAINED
-              aspectRatio={18/9}
-              src="../../assets/images/bimrun1.png" />
-          </StaticImageWrapper>
-        </ImageWrapper>
-      </ProjectWrapper2>
+      </ProjectWrapper>
       <ProjectWrapper>
         <ImageWrapper>
           <StaticImageWrapper>
@@ -68,9 +114,16 @@ const ProjectSection = () => {
           </StaticImageWrapper>
         </ImageWrapper>
         <ProjectDetail data-sal="slide-left" data-sal-easing="ease">
-          <ProjectTitle>
-            BIMRUN APP
-          </ProjectTitle>
+          <ProjectTitleWrapper>
+            <ProjectTitle>
+              BIMRUN APP
+            </ProjectTitle>
+            <ProjectTag css={`background-color: ${color.vue}`}>
+              <ProjectTagTitle>
+                VUEJS
+              </ProjectTagTitle>
+            </ProjectTag>
+          </ProjectTitleWrapper>
           <ProjectDesc>
             This is a Vue2 website wrapped with uniapp (similar to react native).
             This app is used along side BIMRUN webapp. Features offline 3D model viewing, tracking construction schedule and filtering viewing ports.
@@ -78,18 +131,7 @@ const ProjectSection = () => {
           </ProjectDesc>
         </ProjectDetail>
       </ProjectWrapper>
-      <ProjectWrapper2>
-
-        <ProjectDetail data-sal="slide-right" data-sal-easing="ease">
-          <ProjectTitle>
-            My Homepage
-          </ProjectTitle>
-          <ProjectDesc>
-            This is a React site with Gatsby that I experiment with.
-            It uses some animation library like smooth scroll, typist combine with different animations.
-            With both grid and flex layout used, it has responsiveness in mind.
-          </ProjectDesc>
-        </ProjectDetail>
+      <ProjectWrapper>
         <ImageWrapper>
           <StaticImageWrapper>
             <StaticImage
@@ -99,7 +141,25 @@ const ProjectSection = () => {
               src="../../assets/images/homepage.png" />
           </StaticImageWrapper>
         </ImageWrapper>
-      </ProjectWrapper2>
+        <ProjectDetail data-sal="slide-left" data-sal-easing="ease">
+          <ProjectTitleWrapper>
+            <ProjectTitle>
+              My Home Page
+            </ProjectTitle>
+            <ProjectTag css={`background-color: ${color.vue}`}>
+              <ProjectTagTitle>
+                REACT
+              </ProjectTagTitle>
+            </ProjectTag>
+          </ProjectTitleWrapper>
+          <ProjectDesc>
+            This is a React site with Gatsby that I experiment with.
+            It uses some animation library like smooth scroll, typist combine with different animations.
+            With both grid and flex layout used, it has responsiveness in mind.
+          </ProjectDesc>
+        </ProjectDetail>
+
+      </ProjectWrapper>
     </ProjectsContainer>
   )
 }
@@ -162,9 +222,46 @@ const ProjectDetail = styled.div`
   align-items: start;
   flex-direction: column;
 `
-const ProjectTitle = styled.h1`
+const ProjectTitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
   margin: 0 0 3rem 0;
+
+  @media screen and (max-width: 868px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `
+
+const ProjectTitle = styled.div`
+  font-weight: 100;
+  font-size: 2rem;
+`
+
+const ProjectTag = styled.div`
+  height: 2rem;
+  margin-left: 2rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: #666666;
+  border-radius: 0.5rem;
+
+  @media screen and (max-width: 868px) {
+    margin-top: 1rem;
+    margin-left: 0;
+    padding: 0.5rem 0.8rem;
+  }
+`
+
+const ProjectTagTitle = styled.div`
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+`
+
 const ProjectDesc = styled.p`
   line-height: 1.5rem;
 `
