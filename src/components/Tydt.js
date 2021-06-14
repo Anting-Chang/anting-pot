@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import { BsFunnelFill, BsChatSquareDotsFill } from "react-icons/all"
 import { graphql, useStaticQuery } from "gatsby"
 
@@ -30,10 +30,8 @@ const Tydt = () => {
         <ColumnOne>
           <TydtDesc data-sal="slide-up" data-sal-easing="ease">
             <h3>Description</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Nunc nisi magna, euismod sed dictum in, bibendum ut neque.
-              Nulla facilisi. Curabitur et pharetra nisl.
-              Maecenas ac ipsum quis lectus tempus malesuada viverra vel nulla.</p>
+            <p>I am the lead developer working on this project responsible for all main functions with a contractor working on smaller features. This metro app is a vue app wrapped with uniapp(to make it mobile, similar to react native). It is used combined with the web portion to form the whole taiyuan metro project.
+            </p>
           </TydtDesc>
           <TydtDesc data-sal="slide-up" data-sal-easing="ease">
             <BsChatSquareDotsFill
@@ -44,10 +42,9 @@ const Tydt = () => {
               `}
             />
             <h3>Chat & Comments</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Nunc nisi magna, euismod sed dictum in, bibendum ut neque.
-              Nulla facilisi. Curabitur et pharetra nisl.
-              Maecenas ac ipsum quis lectus tempus malesuada viverra vel nulla.</p>
+            <p>Users are able to dispatch maintenance ticket to different departments or progress through maintenance step by step using the workflow engine in the backend.
+              They can make comments on the progress and upload images. They can also chat with all related parties about the situation.
+            </p>
           </TydtDesc>
           <TydtDesc data-sal="slide-up" data-sal-easing="ease">
             <BsFunnelFill
@@ -58,16 +55,21 @@ const Tydt = () => {
               `}
             />
             <h3>Filtering & Tags</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Nunc nisi magna, euismod sed dictum in, bibendum ut neque.
-              Nulla facilisi. Curabitur et pharetra nisl.
-              Maecenas ac ipsum quis lectus tempus malesuada viverra vel nulla.</p>
+            <p>Users can customize their own filtering criteria in the webapp and that would reflect on the mobile app as well.
+              They can also add tags to issues for filtering as well.
+            </p>
           </TydtDesc>
         </ColumnOne>
         <ColumnTwo>
-          {data.allFile.edges.map((image,index) => {
-            return <TestimonialImage key={index} alt={index} image={image.node.childImageSharp.gatsbyImageData}/>
-          })}
+          {/*{data.allFile.edges.map((image,index) => {*/}
+          {/*  return <TestimonialImage key={index} alt="" image={image.node.childImageSharp.gatsbyImageData} placeholder="blurred"/>*/}
+          {/*})}*/}
+          <StaticImageWrapper>
+            <StaticImage alt="" placeholder="blurred" src="../assets/images/tydtapp1.jpg" style={{height: '100%'}}/>
+          </StaticImageWrapper>
+          <StaticImageWrapper>
+            <StaticImage alt="" placeholder="blurred" src="../assets/images/tydtapp2.jpg" style={{height: '100%'}}/>
+          </StaticImageWrapper>
         </ColumnTwo>
       </ContentWrapper>
     </TydtContainer>
@@ -133,11 +135,11 @@ const ColumnTwo = styled.div`
   }
 `
 
-const TestimonialImage = styled(GatsbyImage)`
-  border-radius: 10px;  
+const StaticImageWrapper = styled.div`
+  border-radius: 10px;
   height: 100%;
   transition: 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-5px);
   }

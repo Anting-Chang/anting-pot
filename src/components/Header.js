@@ -10,8 +10,8 @@ import { useEffect, useState } from "react"
 
 const Header = (props) => {
   const [navStatus, setNavstatus] = useState('staticNav')
-
-
+  const [ifMobileMenuOpen, setIfMobileMenuOpen] = useState(false)
+  const [menuStyle, setMenuStyle] = useState("")
 
   const handleScroll = () => {
     if (window.pageYOffset > 20) {
@@ -28,6 +28,24 @@ const Header = (props) => {
     return () => window.removeEventListener("scroll", handleScroll)
   },[])
 
+  const toggleMobileMenu = () => {
+    setIfMobileMenuOpen((prevValue) => !prevValue)
+  }
+
+  const closeMobileMenu = () => {
+    if (ifMobileMenuOpen) {
+      setIfMobileMenuOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    if (ifMobileMenuOpen) {
+      setMenuStyle('visibility: visible; transform: scale(1); background: rgba(12,12,12,0.8)')
+    } else {
+      setMenuStyle('')
+    }
+  }, [ifMobileMenuOpen])
+
   return (
     <Nav className={styles[navStatus]}>
       <NavLink to={"/#about"}>
@@ -35,14 +53,17 @@ const Header = (props) => {
           Anting's Home
         </NavTitle>
       </NavLink>
-      <Bars />
-      <NavMenu>
-        {menuData.map((data,index) => {
-          return <NavLinkBtn to={data.link} key={index}>
-            {data.title}
-          </NavLinkBtn>
-        })}
-      </NavMenu>
+      <Bars onClick={toggleMobileMenu}/>
+      <MenuWrapper >
+        <NavMenu css={`${menuStyle}`}>
+          {menuData.map((data,index) => {
+            return <NavLinkBtn onClick={closeMobileMenu} to={data.link} key={index}>
+              {data.title}
+            </NavLinkBtn>
+          })}
+        </NavMenu>
+      </MenuWrapper>
+
       <NavBtn>
         <ExtButton primary='true' round='true' href="https://www.linkedin.com/in/chang-anting-87a619a5/" target="_blank" rel="noopener noreferrer">Get Resume</ExtButton>
       </NavBtn>
@@ -89,6 +110,11 @@ const NavLinkBtn = styled(LinedButton)`
   &:active {
     background: transparent;
   }
+
+  @media screen and (max-width: 768px) {
+    margin: 25px;
+  }
+  
 `
 
 const NavTitle = styled.h1`
@@ -111,13 +137,45 @@ const Bars = styled(FaBars)`
     cursor: pointer;
   }
 `
+
+const MenuWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    visibility: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`
+
 const NavMenu = styled.div`
   display: flex;
   align-items: center;
   margin-right: -48px;
+  @media screen and (min-width: 768px) {
+    background: rgba(12,12,12,0) !important;
+  }
   
   @media screen and (max-width: 768px) {
-    display: none;
+    display: flex;
+    width: 120vw;
+    height: 120vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    //visibility: hidden;
+    background: rgba(12,12,12,0);
+    border-radius: 50%;
+    transform: scale(0);
+    margin-right: 0px;
+    //display: none;
+    transition: all 0.3s cubic-bezier(.58,-0.34,.5,1.47);
   }
 `
 
