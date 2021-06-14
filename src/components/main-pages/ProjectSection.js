@@ -41,6 +41,7 @@ const ProjectSection = () => {
             It's my personal project that encourage myself to live my life at its fullness.
             It shows whole life in week in one page.
             Each week shown as a cube and while click on it a weekly journal can be added to record my week.
+            Made with react, nodejs, mongodb. Uses bootstrap UI, jwt and password hashing. Completed with user authorization and authentication. Mobile responsive as well.
           </ProjectDesc>
           <BtnWrapper>
             <ExtLinedButton href="https://anting-chang.github.io/weeko-meter" target="_blank" rel="noopener noreferrer">View Site</ExtLinedButton>
@@ -166,6 +167,11 @@ const ProjectSection = () => {
             It uses some animation library like smooth scroll, typist combine with different animations.
             With both grid and flex layout used, it has responsiveness in mind.
           </ProjectDesc>
+          <BtnWrapper>
+            <a href="https://github.com/Anting-Chang/anting-pot" target="_blank" rel="noopener noreferrer">
+              <FaGithub style={{fontSize: '2rem', textDecoration: 'none', color: '#333', marginLeft: '10px'}} />
+            </a>
+          </BtnWrapper>
         </ProjectDetail>
 
       </ProjectWrapper>
