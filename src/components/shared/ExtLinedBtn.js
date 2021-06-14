@@ -5,7 +5,7 @@ export const ExtLinedButton = styled.a`
   font-weight: 100;
   background: transparent;
   border: none;
-  margin: 30px auto 0;
+  margin: 0 auto 0;
   display: block;
   font-size: 20px;
   outline: none;
@@ -14,7 +14,7 @@ export const ExtLinedButton = styled.a`
 
   position: relative;
   transition: 0.3s;
-  padding: 25px; // the trick
+  padding: 15px; // the trick
 
   &:before {
     content: '';

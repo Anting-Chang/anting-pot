@@ -3,6 +3,9 @@ import styled from "styled-components"
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { StaticImage } from "gatsby-plugin-image"
 import { LinedButton } from "../LinedButton"
+import { ExtLinedButton } from "../shared/ExtLinedBtn"
+
+import { FaGithub } from "react-icons/all"
 
 const ProjectSection = () => {
   const color = {
@@ -20,7 +23,7 @@ const ProjectSection = () => {
               placeholder="blurred"
               CONSTRAINED
               aspectRatio={18/9}
-              src="../../assets/images/bimrunapp1.png" />
+              src="../../assets/images/weekjournal.png" />
           </StaticImageWrapper>
         </ImageWrapper>
         <ProjectDetail data-sal="slide-left" data-sal-easing="ease">
@@ -39,6 +42,12 @@ const ProjectSection = () => {
             It shows whole life in week in one page.
             Each week shown as a cube and while click on it a weekly journal can be added to record my week.
           </ProjectDesc>
+          <BtnWrapper>
+            <ExtLinedButton href="https://anting-chang.github.io/weeko-meter" target="_blank" rel="noopener noreferrer">View Site</ExtLinedButton>
+            <a href="https://github.com/Anting-Chang/weeko-meter" target="_blank" rel="noopener noreferrer">
+              <FaGithub style={{fontSize: '2rem', textDecoration: 'none', color: '#333', marginLeft: '10px'}} />
+            </a>
+          </BtnWrapper>
         </ProjectDetail>
       </ProjectWrapper>
       <ProjectWrapper>
@@ -86,7 +95,7 @@ const ProjectSection = () => {
             <ProjectTitle>
               BIMRUN
             </ProjectTitle>
-            <ProjectTag css={`background-color: ${color.vue}`}>
+            <ProjectTag css={`background-color: ${color.angular}`}>
               <ProjectTagTitle>
                 ANGULAR 5
               </ProjectTagTitle>
@@ -99,7 +108,7 @@ const ProjectSection = () => {
             It uses Restful API, Sass, BIM engine based on three.js and customized UI.
           </ProjectDesc>
           <BtnWrapper>
-            <LinedButton to={"/"}>View Site</LinedButton>
+            <ExtLinedButton href="http://www.bimrun.com/" target="_blank" rel="noopener noreferrer">View Site</ExtLinedButton>
           </BtnWrapper>
         </ProjectDetail>
       </ProjectWrapper>
@@ -146,7 +155,7 @@ const ProjectSection = () => {
             <ProjectTitle>
               My Home Page
             </ProjectTitle>
-            <ProjectTag css={`background-color: ${color.vue}`}>
+            <ProjectTag css={`background-color: ${color.react}`}>
               <ProjectTagTitle>
                 REACT
               </ProjectTagTitle>
@@ -268,5 +277,7 @@ const ProjectDesc = styled.p`
 const BtnWrapper = styled.div`
   display: flex;
   text-align: center;
+  margin-top: 20px;
+  align-items: flex-end;
 `
 
