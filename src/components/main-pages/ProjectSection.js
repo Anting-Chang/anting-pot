@@ -23,6 +23,40 @@ const ProjectSection = () => {
               placeholder="blurred"
               CONSTRAINED
               aspectRatio={18/9}
+              src="../../assets/images/spotspotter.png" />
+          </StaticImageWrapper>
+        </ImageWrapper>
+        <ProjectDetail data-sal="slide-left" data-sal-easing="ease">
+          <ProjectTitleWrapper>
+            <ProjectTitle>
+              Spot Spotter
+            </ProjectTitle>
+            <ProjectTag css={`background-color: ${color.react}`}>
+              <ProjectTagTitle>
+                React
+              </ProjectTagTitle>
+            </ProjectTag>
+          </ProjectTitleWrapper>
+          <ProjectDesc>
+            It's a parking finder app that helps you find parking at the heart of Montreal.
+            It uses react, node, mongodb. Leaflet open map as map service. Also build with user authorization and authentication.
+            If you would like to know how it works, please visit the github page below. Or try it out!
+          </ProjectDesc>
+          <BtnWrapper>
+            <ExtLinedButton href="https://anting-chang.github.io/spot-spotter" target="_blank" rel="noopener noreferrer">View Site</ExtLinedButton>
+            <a href="https://github.com/Anting-Chang/spot-spotter" target="_blank" rel="noopener noreferrer">
+              <FaGithub style={{fontSize: '2rem', textDecoration: 'none', color: '#333', marginLeft: '10px'}} />
+            </a>
+          </BtnWrapper>
+        </ProjectDetail>
+      </ProjectWrapper>
+      <ProjectWrapper>
+        <ImageWrapper>
+          <StaticImageWrapper>
+            <StaticImage
+              placeholder="blurred"
+              CONSTRAINED
+              aspectRatio={18/9}
               src="../../assets/images/weekjournal.png" />
           </StaticImageWrapper>
         </ImageWrapper>
