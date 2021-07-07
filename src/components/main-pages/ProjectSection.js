@@ -5,7 +5,8 @@ import { StaticImage } from "gatsby-plugin-image"
 import { LinedButton } from "../LinedButton"
 import { ExtLinedButton } from "../shared/ExtLinedBtn"
 
-import { FaGithub } from "react-icons/all"
+import { FaGithub, FaExternalLinkAlt } from "react-icons/all"
+import styles from './ProjectSection.module.css'
 
 const ProjectSection = () => {
   const color = {
@@ -38,14 +39,17 @@ const ProjectSection = () => {
             </ProjectTag>
           </ProjectTitleWrapper>
           <ProjectDesc>
-            It's a parking finder app that helps you find parking at the heart of Montreal.
-            It uses react, node, mongodb. Leaflet open map as map service. Also build with user authorization and authentication.
-            If you would like to know how it works, please visit the github page below. Or try it out!
+            Made all by myself, it's the best parking finder app on the market that helps you find free parking in DT Montreal.
+            It uses react, node, mongodb, dockerized and hosted by AWS EC2. Leaflet open map as map service. Also build with user authorization and authentication.
+            As I couldn't find a free parking spot app, I made one myself, try it out!
           </ProjectDesc>
           <BtnWrapper>
-            <ExtLinedButton href="https://anting-chang.github.io/spot-spotter" target="_blank" rel="noopener noreferrer">View Site</ExtLinedButton>
+            <a href="https://anting-chang.github.io/spot-spotter" target="_blank" rel="noopener noreferrer">
+              <FaExternalLinkAlt style={{fontSize: '2rem', textDecoration: 'none', color: '#eee', marginLeft: '10px'}} />
+            </a>
+            {/*<ExtLinedButton href="https://anting-chang.github.io/spot-spotter" target="_blank" rel="noopener noreferrer">View Site</ExtLinedButton>*/}
             <a href="https://github.com/Anting-Chang/spot-spotter" target="_blank" rel="noopener noreferrer">
-              <FaGithub style={{fontSize: '2rem', textDecoration: 'none', color: '#333', marginLeft: '10px'}} />
+              <FaGithub style={{fontSize: '2rem', textDecoration: 'none', color: '#eee', marginLeft: '30px'}} />
             </a>
           </BtnWrapper>
         </ProjectDetail>
@@ -78,9 +82,12 @@ const ProjectSection = () => {
             Made with react, nodejs, mongodb. Uses bootstrap UI, jwt and password hashing. Completed with user authorization and authentication. Mobile responsive as well.
           </ProjectDesc>
           <BtnWrapper>
-            <ExtLinedButton href="https://anting-chang.github.io/weeko-meter" target="_blank" rel="noopener noreferrer">View Site</ExtLinedButton>
+            <a href="https://anting-chang.github.io/weeko-meter" target="_blank" rel="noopener noreferrer">
+              <FaExternalLinkAlt style={{fontSize: '2rem', textDecoration: 'none', color: '#eee', marginLeft: '10px'}} />
+            </a>
+            {/*<ExtLinedButton href="https://anting-chang.github.io/weeko-meter" target="_blank" rel="noopener noreferrer">View Site</ExtLinedButton>*/}
             <a href="https://github.com/Anting-Chang/weeko-meter" target="_blank" rel="noopener noreferrer">
-              <FaGithub style={{fontSize: '2rem', textDecoration: 'none', color: '#333', marginLeft: '10px'}} />
+              <FaGithub style={{fontSize: '2rem', textDecoration: 'none', color: '#eee', marginLeft: '30px'}} />
             </a>
           </BtnWrapper>
         </ProjectDetail>
@@ -203,7 +210,7 @@ const ProjectSection = () => {
           </ProjectDesc>
           <BtnWrapper>
             <a href="https://github.com/Anting-Chang/anting-pot" target="_blank" rel="noopener noreferrer">
-              <FaGithub style={{fontSize: '2rem', textDecoration: 'none', color: '#333', marginLeft: '10px'}} />
+              <FaGithub style={{fontSize: '2rem', textDecoration: 'none', color: '#eee', marginLeft: '10px'}} />
             </a>
           </BtnWrapper>
         </ProjectDetail>
